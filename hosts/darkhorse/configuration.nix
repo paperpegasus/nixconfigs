@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/nix
     ];
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -44,15 +45,15 @@ settings = {
   "vscode"
  ];
 
- # enable zsh maybe
- programs.zsh.enable = true;
 
  # Set zsh as default shell
- users.defaultUserShell = pkgs.zsh;
+ # users.defaultUserShell = pkgs.zsh;
 
+ programs.zsh.enable = true;
  # Define a user account. Don't forget to set a password with  passwd .
  users.users.paperpegasus = {
-   useDefaultShell = true;
+   # useDefaultShell = true;
+   shell = pkgs.zsh;
    isNormalUser = true;
    initialHashedPassword = "$6$4k7GWIhnAUu6JLZd$EQ.5184j5nGLpe1gvkCNXWI9/iwkA7veBsrwkYXIY5ZioDpjaNOZtnEi5R5GpVcsh/1YS2rabMj.7l/G9UQuy0";
    extraGroups = [ "wheel" ]; # Enable  sudo  for the user.
@@ -66,17 +67,12 @@ settings = {
     tree
     sl
     ripgrep
-    python313
     neovim
     go
     emacs
     awscli2
     alacritty
   ];
-
-
-  environment.shells = [ pkgs.zsh ];
-
 
   system.stateVersion = "24.11"; # Did you read the comment?
 }

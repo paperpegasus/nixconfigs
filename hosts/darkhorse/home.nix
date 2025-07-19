@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ../../modules/home-manager
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "paperpegasus";
@@ -73,10 +76,6 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-  
-  # Disable zsh completion and let autocomplete plugin handle it
-  programs.zsh.enableCompletion = false;
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
