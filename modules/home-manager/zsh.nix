@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -12,4 +13,5 @@
     };
     history.size = 10000;
   };
+  home.packages = [ pkgs.hello ];
 }

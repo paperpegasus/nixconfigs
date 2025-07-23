@@ -39,24 +39,21 @@ settings = {
 };
 
  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+  "nvidia-x11"
+  "nvidia-settings"
   "broadcom-sta"
   "discord"
   "google-chrome"
   "vscode"
  ];
 
-
- # Set zsh as default shell
- # users.defaultUserShell = pkgs.zsh;
-
- programs.zsh.enable = true;
  # Define a user account. Don't forget to set a password with  passwd .
  users.users.paperpegasus = {
    # useDefaultShell = true;
    openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJueLlKNTuLZI9ForDV9r6xJAXGwRYvEloVS5owm51Yp paperpegasus@github.com"
     ];
-   shell = pkgs.zsh;
+   shell = pkgs.bash;
    isNormalUser = true;
    initialHashedPassword = "$6$4k7GWIhnAUu6JLZd$EQ.5184j5nGLpe1gvkCNXWI9/iwkA7veBsrwkYXIY5ZioDpjaNOZtnEi5R5GpVcsh/1YS2rabMj.7l/G9UQuy0";
    extraGroups = [ "wheel" ]; # Enable  sudo  for the user.

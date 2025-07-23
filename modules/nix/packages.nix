@@ -7,6 +7,6 @@
     # coreutils # basic GNU utilities
     fd
     clang
-    neofetch
+    fastfetch
   ];
 }
