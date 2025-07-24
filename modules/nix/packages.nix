@@ -1,10 +1,7 @@
-{ pkgs, lib, ...}:
+{ pkgs, ...}:
 {
   environment.systemPackages = with pkgs; [
     ghostty
-    starship
-    # optional dependencies
-    # coreutils # basic GNU utilities
     fd
     clang
     fastfetch

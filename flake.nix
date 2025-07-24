@@ -21,6 +21,7 @@
             "discord"
             "google-chrome"
             "broadcom-sta"
+            "aspell-dict-en-science"
           ];
           permittedInsecurePackages = [
             "ventoy-1.1.05"
