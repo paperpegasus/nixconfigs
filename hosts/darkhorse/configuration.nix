@@ -63,7 +63,7 @@
   users.users.paperpegasus = {
     # useDefaultShell = true;
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEJ1JF5b+eC7AXpklo/+JGZPaMVcvGCa6Eh1uwK7TcO6 paperpegasus@github.com"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINP/nLlQ/8DjAgM5RMmFR406DicjlXq4w+EpdnfuDIaU xriseugene@gmail.com"
     ];
     shell = pkgs.bash;
     isNormalUser = true;
