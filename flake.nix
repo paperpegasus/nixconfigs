@@ -23,7 +23,6 @@
             builtins.elem (nixpkgs.lib.getName pkg) [
               "discord"
               "google-chrome"
-              "broadcom-sta-6.30.223.271-57-6.12.39"
               "aspell-dict-en-science"
             ];
           permittedInsecurePackages = [
