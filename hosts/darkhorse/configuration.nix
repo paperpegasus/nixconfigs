@@ -3,10 +3,8 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 {
-  config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -16,9 +14,11 @@
     ./hardware-configuration.nix
     ../../modules/nix
   ];
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    # Use the systemd-boot EFI boot loader.
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+  };
 
   # networking
   networking.hostName = "darkhorse"; # Define your hostname.
