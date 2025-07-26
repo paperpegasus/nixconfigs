@@ -1,10 +1,11 @@
 {
   imports = [
     ./git.nix
-    # ./zsh.nix
     ./bash.nix
     ./starship.nix
     ./emacs
+    ./ghostty
+    ./vim.nix
   ];
   programs = {
     fzf = import ./fzf.nix;
@@ -18,14 +19,6 @@
         "--max-columns-preview"
         "--colors=line:style:bold"
       ];
-    };
-    vim = {
-      enable = true;
-      extraConfig = ''
-        set relativenumber
-        set termguicolors
-        syntax on
-      '';
     };
   };
 }
