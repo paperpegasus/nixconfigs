@@ -6,6 +6,7 @@
     ./emacs
     ./ghostty
     ./vim.nix
+    ./zed
   ];
   programs = {
     fzf = import ./fzf.nix;
