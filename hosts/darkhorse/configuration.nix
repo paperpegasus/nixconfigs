@@ -95,6 +95,7 @@
     # useDefaultShell = true;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINP/nLlQ/8DjAgM5RMmFR406DicjlXq4w+EpdnfuDIaU xriseugene@gmail.com"
+      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCyP19s1FEECnccJe7rcZxkQ2tIlC83bSzctRNSHerJx2qoeTKIEiUEE+XqN1DWLlfsj3rJCFqkK+AtI/ivY9MTou3s2Oc+bw+71BZoQxO8qC6A86qhWuwwvFs1A2igDw41XqJ/eSh91aT7I9Jwli+Y8NEJLuLjF9fcYFODX1cSSyg2WOrVIm84zdx1NXwkNsrf1eZvGPB1cCQPhNqA52GDphm9HegyF5grP0TPfWokxDnuzmOHH5ci750MgBpOR86U7/1ulTcCvHlzgIUkgg6ytN/sL/SNzq/sszRc3NovnBD4IlFLk+UVvMgm+0vr1HI7j1RfS0zRAxgok6dkENWhsWNuiAMswo4gHrfkC0LrZxKshAqklEIUzqnu6sVFkIC8RjBILclsFCCF7PFHg8KXS1xbSxDzS5uq7+OatpzhJWdkUdS9kFN4pfOxxATox8WaVWOPftfsSWwNK9LqROHJF3gR941W1RoYQAQgK560ihgJR604GREVAHJ6Y7+5RU0= paperpegasus@github.com"
     ];
     shell = pkgs.bash;
     isNormalUser = true;
