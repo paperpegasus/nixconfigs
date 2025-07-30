@@ -3,7 +3,7 @@
   programs.ghostty = {
     enable = true;
     enableBashIntegration = true;
-    clearDefaultKeybinds = true;
+    # clearDefaultKeybinds = true;
     settings = {
       # theme = "dark:catppuccin-mocha,light:catppuccin-latte";
       foreground = "#4BC6B2"; # #35A29F
@@ -59,7 +59,7 @@
       desktop-notifications = true;
       bold-is-bright = true;
       keybind = import ./keybind.nix;
-      # term = "xterm-256colors" ; #FIXME:tput: unknown terminal "xterm-256colors"
+      term = "xterm-ghostty"; # FIXME:tput: unknown terminal "xterm-256colors"
     };
   };
 }

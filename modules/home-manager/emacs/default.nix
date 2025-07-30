@@ -1,5 +1,5 @@
 # default.nix
-{ pkgs, osConfig, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./emacsPkgs.nix
