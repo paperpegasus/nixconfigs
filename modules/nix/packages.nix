@@ -4,5 +4,6 @@
     clang
     fastfetch
     wl-clipboard
+    firefox
   ];
 }

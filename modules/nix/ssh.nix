@@ -8,7 +8,8 @@
       startWhenNeeded = true; # socket activated
       settings = {
         #LogLevel = "DEBUG";
-        PasswordAuthentication = true; # def: false=require public key auth?
+        PasswordAuthentication = false; # def: false=require public key auth?
+        PubKeyAuthentication = true;
         UseDns = true; # false::
         AllowUsers = [
           "paperpegasus"
