@@ -13,6 +13,10 @@
     fd = import ./fd.nix;
     fastfetch = import ./fastfetch.nix;
     lsd = import ./lsd.nix;
+    git-credential-oauth = {
+      enable = true;
+      extraFlags = [ "-device" ];
+    };
     ripgrep = {
       enable = true;
       arguments = [
