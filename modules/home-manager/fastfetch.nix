@@ -4,7 +4,7 @@
   settings = {
     # $XDG_CONFIG_HOME/fastfetch/config.jsonc
     logo = {
-      source = "nixos_small"; # nixos_small #nixos_old
+      source = "nixos_large"; # nixos_small #nixos_old
       padding = {
         right = 1;
       };
@@ -25,6 +25,21 @@
         "keyColor" = "red";
       }
       {
+        "type" = "cpu";
+        "key" = "CPU";
+        "keyColor" = "cyan";
+      }
+      {
+        "type" = "gpu";
+        "key" = "GPU";
+        "keyColor" = "orange";
+      }
+      {
+        "memory" = "memory";
+        "key" = "MEMORY";
+        "keyColor" = "green";
+      }
+      {
         type = "datetime";
         key = "Date";
         format = "{1}-{3}-{11}";
@@ -36,14 +51,6 @@
       }
       "break"
       "player"
-      # "media"
-      # {
-      #   "type" = "media";
-      #   "key" = "NOW PLAYING";
-      #   "format" = "{?artist}{artist} - {?}{title}";
-      #   "keyColor" = "cyan";
-      # }
-      # "break"
       {
         "type" = "display";
         "key" = "MONITOR ({name})";
@@ -51,7 +58,7 @@
         # "format" = "{width}x{height} @ {refresh-rate} Hz - {physical-width}x{physical-height} mm ({inch} inches, {ppi} ppi)";
         "format" = "{width}x{height} @ {refresh-rate} Hz";
       }
-      # "uptime"
+      "uptime"
       "packages"
     ];
   };
