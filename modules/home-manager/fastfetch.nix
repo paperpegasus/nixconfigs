@@ -4,7 +4,7 @@
   settings = {
     # $XDG_CONFIG_HOME/fastfetch/config.jsonc
     logo = {
-      source = "nixos_large"; # nixos_small #nixos_old
+      source = "nixos_normal"; # nixos_small #nixos_old
       padding = {
         right = 1;
       };
@@ -27,17 +27,17 @@
       {
         "type" = "cpu";
         "key" = "CPU";
-        "keyColor" = "cyan";
+        "keyColor" = "red";
       }
       {
         "type" = "gpu";
         "key" = "GPU";
-        "keyColor" = "orange";
+        "keyColor" = "red";
       }
       {
-        "memory" = "memory";
+        "type" = "memory";
         "key" = "MEMORY";
-        "keyColor" = "green";
+        "keyColor" = "red";
       }
       {
         type = "datetime";

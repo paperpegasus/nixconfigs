@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -41,7 +41,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-
 
   home.sessionPath = [
     "$HOME/.emacs.d/bin"
