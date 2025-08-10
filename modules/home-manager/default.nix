@@ -4,6 +4,7 @@
     ./bash.nix
     ./starship.nix
     ./emacs
+    ./kitty
     ./ghostty
     ./vim.nix
     ./zed
