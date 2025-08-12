@@ -27,7 +27,7 @@
       # update_check_interval = 0;
       # undercurl_style = "thin-sparse"; # thin-sparse | thin | thick| sparse | dense
       cursor = "#FAA6FF"; # #573280 "#3FA8C6""#9381ff""#0CA4A5";
-      # cursor_shape = "underline"; #block beam
+      cursor_shape = "beam"; # block beam
       cursor_shape_unfocused = "underline"; # hollow, beam , underline
       # cursor_beam_thickness = "1.5";
       # cursor_beam_thickness = "0.5";
