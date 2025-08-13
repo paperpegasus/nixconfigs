@@ -78,7 +78,7 @@
     pkg:
     builtins.elem (lib.getName pkg) [
 
-      "broadcom-sta-6.30.223.271-57-6.12.39"
+      "broadcom-sta-6.30.223.271-57-6.12.41"
       "nvidia-x11"
       "nvidia-settings"
       "broadcom-sta"
@@ -87,7 +87,7 @@
       "vscode"
     ];
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.39"
+    "broadcom-sta-6.30.223.271-57-6.12.41"
   ];
 
   # Define a user account. Don't forget to set a password with  passwd .
