@@ -3,7 +3,8 @@
   environment.systemPackages = with pkgs; [
     clang
     fastfetch
-    wl-clipboard
     firefox
+    logseq
+    wl-clipboard
   ];
 }
