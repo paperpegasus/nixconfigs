@@ -22,14 +22,21 @@
         # Whether to enable systemd socket activation for the Emacs service. # TODO see if conflicting with startWithUSerSession
         enable = true; # false::, generation of Emacs client desktop file.
         arguments = [
-          "-c" # -r --reuse-frame (reuse frame if exists, otherwise create a new frame) - --create-frame/-c
+          "--reuse-frame" # -r --reuse-frame (reuse frame if exists, otherwise create a new frame) - --create-frame/-c
           # "-nw"
           # "-a 'emacs'"
         ];
       };
       extraOptions = [
-        "-r"
       ];
     };
+home = {
+    sessionPath = [
+      "$HOME/.config/emacs/bin"
+    ];
+    sessionVariables = {
+      LSP_USE_PLISTS = "true";
+    };
+  };
   };
 }

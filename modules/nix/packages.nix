@@ -4,7 +4,10 @@
     clang
     fastfetch
     firefox
+    hugo
     logseq
+    minikube
+    obsidian
     wl-clipboard
   ];
 }

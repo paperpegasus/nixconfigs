@@ -1,4 +1,3 @@
-
 { pkgs, ... }:
 let
   tex = (
@@ -28,6 +27,7 @@ in
       # mbsync # for mu4e FIXME
       djvu
       mu4e
+      direnv
       # jupyter
       # prettier
       # org-tidy
@@ -112,7 +112,7 @@ in
     # lua-language-server
     basedpyright
     black
-    nixfmt-rfc-style # official - needed to use formatting with :lang nix
+    nixfmt
 
     emacs-lsp-booster
 
@@ -124,7 +124,7 @@ in
     groff # ms-pdf export
     ghostscript
 
-    nodePackages.js-beautify # js/css/html format
+    jsbeautifier # js/css/html format
     stylelint # css linter
 
     graphviz # org-roam visualization
@@ -143,6 +143,6 @@ in
     html-tidy
 
     # lsp
-    nodejs_24 # consider npm for auto install of servers in lsp-mode
+    nodejs # consider npm for auto install of servers in lsp-mode
   ];
 }

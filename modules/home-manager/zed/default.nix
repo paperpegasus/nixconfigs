@@ -1,21 +1,18 @@
 {
-  # home.packages = [pkgs.nixd pkgs.nil];
   programs.zed-editor = {
     enable = true;
-
-    #extensions = ["nix" "toml" "elixir" "make"];
-    # package = pkgs.zed-editor;
-    # extensions = ["nix" "python"];
-
     userSettings = {
 
       relative_line_numbers = true;
       auto_install_extensions = {
         nix = true;
+        go = true;
+        elixir = true;
+        catppuccin = true;
       };
       #show_whitespaces = "all" ;
-      ui_font_size = 16;
-      buffer_font_size = 15;
+      ui_font_size = 12;
+      buffer_font_size = 12;
       buffer_font_family = "JetBrains Mono";
       buffer_font_weight = 400; # default 400, 100-900
       buffer_line_height = "comfortable";
@@ -57,27 +54,14 @@
         #diagnostics = true;
       };
 
-      # "search": {
-      #   "whole_word": false,
-      #   "case_sensitive": false,
-      #   "include_ignored": false,
-      #   "regex": false
-      # },
-
       tabs = {
         close_position = "right";
         file_icons = true;
-        git_status = false;
+        git_status = true;
         #activate_on_close = "history";
         activate_on_close = "neighbour"; # history, neighbour
         always_show_close_button = false;
       };
-
-      # preview_tabs = {
-      #   enabled = true;
-      #   enable_preview_from_file_finder = true;
-      #   enable_preview_from_code_navigation = true;
-      # };
 
       enable_language_server = true; # on default
       # format_on_save = "on";
@@ -96,35 +80,21 @@
 
       terminal = {
         alternate_scroll = "off";
-        blinking = "off";
+        blinking = "on";
         copy_on_select = true;
         dock = "bottom";
-        # detect_venv = {
-        #     on = {
-        #         directories = [".env" "env" ".venv" "venv"];
-        #         activate_script = "default";
-        #     };
-        # };
-        # env = {
-        #     TERM = "kitty";
-        # };
-        #font_family = "FiraCode Nerd Font";
         font_family = "Zed Plex Mono";
-        #font_features = null;
-        font_size = 15;
+        font_size = 12;
         line_height = "comfortable";
         option_as_meta = false;
         button = false;
         shell = "system";
-        #{
-        #                    program = "zsh";
-        #};
         toolbar = {
           title = true;
         };
         working_directory = "current_project_directory";
         cursor_blink = false;
-        cursor_shape = "underline"; # block, bar, hollow,underline
+        cursor_shape = "bar"; # block, bar, hollow,underline
       };
 
       project_panel = {
@@ -137,10 +107,15 @@
         "Python" = {
           tab_size = 4;
         };
+        "Go" = {
+          tab_size = 4;
+          language_servers = [
+            "gopls"
+          ];
+        };
         "nix" = {
           tab_size = 2;
           language_servers = [
-            "nil"
             "nixd"
             "..."
           ];
@@ -151,39 +126,60 @@
       };
 
       lsp = {
-        #     rust-analyzer = {
+        discord_presence = {
+          initialization_options = {
+            # Application ID for the rich presence
+            application_id = "1263505205522337886";
+            base_icons_url = "https://raw.githubusercontent.com/xhyrom/zed-discord-presence/main/assets/icons/";
+            state = "Working on {filename}";
+            details = "In {workspace}";
 
-        #         binary = {
-        #             #                        path = lib.getExe pkgs.rust-analyzer;
-        #             path_lookup = true;
-        #         };
-        #     };
-        # nil = {
-        #    initialization_options = {# these initialization_options are merged into zed's defaults
-        #      formatting = {
-        #        command = ["nixfmt"];
-        #      };
-        #    settings = {
-        #      diagnostic = {
-        #        ignored = ["unused_binding"];
-        #      };
-        #    };
-        #    };
-        #  };
+            # URL for the large image
+            large_image = "{base_icons_url}/{language:lo}.png";
+            large_text = "{language:u}";
 
-        # nixd = {
-        #   settings = {
-        #     diagnostic = {
-        #       suppress = ["sema-extra-with"];
-        #     };
-        #   };
-        # };
+            # URL for the small images
+            small_image = "{base_icons_url}/zed.png";
+            small_text = "Zed";
 
-        # nix = {
-        #     binary = {
-        #         path_lookup = true;
-        #     };
-        # };
+            # Idle settings - when inactive
+            idle = {
+              timeout = 300; # Idle timeout in seconds (5 minutes)
+
+              # Action to take while idle
+              # `change_activity` - changes the activity to idle with the following details
+              # `clear_activty` - clears the activity (hides it)
+              action = "change_activity";
+              state = "Idling";
+              details = "In Zed";
+              large_image = "{base_icons_url}/zed.png";
+              large_text = "Zed";
+              small_image = "{base_icons_url}/idle.png";
+              small_text = "Idle";
+            };
+
+            # Rules to disable presence in specific workspaces
+            rules = {
+              mode = "blacklist";
+              paths = [ "absolute path" ];
+            };
+
+            git_integration = true;
+
+            # Per-language overrides
+            languages = {
+              go = {
+                state = "Hacking on {filename}";
+                details = "Ghopher at work";
+                large_image = "{base_icons_url}/go.png";
+                large_text = "oh Goo";
+                small_image = "{base_icons_url}/zed.png";
+                small_text = "Zed";
+              };
+            };
+
+          };
+        }; # End of discord presence settings
       };
 
       vim = {
@@ -201,9 +197,13 @@
       theme = {
         mode = "system"; # system, dark, light
         light = "Rosé Pine Dawn";
-        #dark = "One Dark";
-        #dark = "Rosé Pine";
-        dark = "Gruvbox Dark Soft";
+        dark = "Catppuccin Frappé";
+      };
+
+      icon_theme = {
+        mode = "system";
+        dark = "Catppuccin Frappé";
+        light = "Catppuccin Latte";
       };
 
       indent_guides = {

@@ -12,7 +12,7 @@
       # nightfly
       # dracula-vim
       onedark-vim
-      neodark-vim
+      #neodark-vim
       # gruvbox
       vim-airline
       vim-commentary

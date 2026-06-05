@@ -18,6 +18,7 @@
     # Use the systemd-boot EFI boot loader.
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
+    zfs.forceImportRoot = false;
   };
 
   # networking
@@ -77,17 +78,21 @@
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
-
-      "broadcom-sta-6.30.223.271-57-6.12.41"
+      "broadcom-sta-6.30.223.271-59-6.12.58"
+      "obsidian"
       "nvidia-x11"
       "nvidia-settings"
       "broadcom-sta"
       "discord"
       "google-chrome"
       "vscode"
+      "nvidia-kernel-modules"
     ];
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-57-6.12.41"
+    "electron-39.8.10"
+    "broadcom-sta-6.30.223.271-59-6.18.34"
+    "broadcom-sta-6.30.223.271-59-6.12.63"
+
   ];
 
   # Define a user account. Don't forget to set a password with  passwd .
@@ -95,7 +100,6 @@
     # useDefaultShell = true;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINP/nLlQ/8DjAgM5RMmFR406DicjlXq4w+EpdnfuDIaU xriseugene@gmail.com"
-      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCyP19s1FEECnccJe7rcZxkQ2tIlC83bSzctRNSHerJx2qoeTKIEiUEE+XqN1DWLlfsj3rJCFqkK+AtI/ivY9MTou3s2Oc+bw+71BZoQxO8qC6A86qhWuwwvFs1A2igDw41XqJ/eSh91aT7I9Jwli+Y8NEJLuLjF9fcYFODX1cSSyg2WOrVIm84zdx1NXwkNsrf1eZvGPB1cCQPhNqA52GDphm9HegyF5grP0TPfWokxDnuzmOHH5ci750MgBpOR86U7/1ulTcCvHlzgIUkgg6ytN/sL/SNzq/sszRc3NovnBD4IlFLk+UVvMgm+0vr1HI7j1RfS0zRAxgok6dkENWhsWNuiAMswo4gHrfkC0LrZxKshAqklEIUzqnu6sVFkIC8RjBILclsFCCF7PFHg8KXS1xbSxDzS5uq7+OatpzhJWdkUdS9kFN4pfOxxATox8WaVWOPftfsSWwNK9LqROHJF3gR941W1RoYQAQgK560ihgJR604GREVAHJ6Y7+5RU0= paperpegasus@github.com"
     ];
     shell = pkgs.bash;
     isNormalUser = true;

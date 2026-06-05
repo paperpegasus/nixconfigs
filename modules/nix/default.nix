@@ -7,5 +7,6 @@
     ./nvidia.nix
     ./bash.nix
     ./pipewire.nix
+    ./docker.nix
   ];
 }
