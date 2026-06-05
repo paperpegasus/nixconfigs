@@ -9,7 +9,7 @@
       push.autoSetupRemote = true; # does --set-upstream origin to current branch
       user = {
         name = "testname";
-        email = "paperpegasus@github.com";
+        email = "test@email.com";
       };
       #credential.helper = "${pkgs.git.override { withLibsecret = true; }}/bin/git-credential-libsecret";
       #safe.directory = "/etc/nixos";
