@@ -4,7 +4,14 @@
     lfs = {
       enable = false;
     };
+    signing = {
+      key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILPpL9epIHf6BEBDOlkv7VJJaveF1y2Mse8TvDilRyzs latest";
+      signByDefault = true;
+    };
     settings = {
+      gpg = {
+        format = "ssh";
+      };
       init.defaultBranch = "main";
       push.autoSetupRemote = true; # does --set-upstream origin to current branch
       user = {
