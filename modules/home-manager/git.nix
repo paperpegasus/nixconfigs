@@ -2,7 +2,7 @@
   programs.git = {
     enable = true;
     lfs = {
-      enable = true;
+      enable = false;
     };
     settings = {
       init.defaultBranch = "main";

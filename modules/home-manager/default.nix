@@ -15,7 +15,7 @@
     fastfetch = import ./fastfetch.nix;
     lsd = import ./lsd.nix;
     git-credential-oauth = {
-      enable = true;
+      enable = false;
       extraFlags = [ "-device" ];
     };
     ripgrep = {
