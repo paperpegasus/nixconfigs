@@ -8,8 +8,8 @@
       init.defaultBranch = "main";
       push.autoSetupRemote = true; # does --set-upstream origin to current branch
       user = {
-        name = "paperpegasus";
-        email = "chuchuchris89@gmail.com";
+        name = "testname";
+        email = "paperpegasus@github.com";
       };
       #credential.helper = "${pkgs.git.override { withLibsecret = true; }}/bin/git-credential-libsecret";
       #safe.directory = "/etc/nixos";
